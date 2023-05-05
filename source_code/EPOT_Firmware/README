@@ -1,1 +1,46 @@
+Change Notes :  
 
+28/03/2023a : File creation 
+              void LED_init(void); 
+              void LED_set(uint8_t freq); 
+              void Ultrasonic_init(void); 
+              float Ultrasonic_Read(void); 
+              void Aref_init(void); 
+              void Temp_init(void); 
+              float Temp_Read(void); 
+              void Photo_Cell_init(void); 
+              float Photo_Cell_Read(void); 
+              void Humidity_init(void); 
+              float Humidity_Read(void); 
+29/03/2023a : POST test implementation 
+              LED not flashing bug fixed (prototype used instead of function call) 
+29/03/2023b : Task implementation 
+              Task Sensors Update 
+              Task Sensors Print - debug only, to be removed later on 
+29/03/2023c : Wifi setup implementation 
+29/03/2023d : Database setup implementation 
+              Code separation with EPOT_lib.h 
+31/03/2023a : watchdog implementation 
+03/04/2023a : Sensors to database 
+              Ledc library error fixed 
+04/04/2023a : Error log to database 
+              void Database_Self_test_repport(uint8_t Error_Count, uint8_t *Error_log) 
+              Change uint8_t Self_test(uint8_t *Error_log_table) : text as const char* 
+04/04/2023b : Bluetooth implementation 
+12/04/2023a : Startup sequence (stopped due to flash size issue) 
+13/04/2023a : New partion table with 3MB free for application use 
+13/04/2023b : Startup sequence (continuation) 
+              Task_database_read() / Task_database_write() deleted because replaced by task_database_update() 
+19/04/2023a : Database authentification refresh implementation 
+              [bug fix] "Invalid data; couldn't parse JSON object, array, or value." fixed : when left unconnected,  
+              thermistor value was too large for the database. Temperature capped to 70°C 
+19/04/2023b : [bug fix] Bluetooth authentification systematic timeout fixed 
+20/04/2023a : [bug fix] Bluetooth authentification failed when retry 
+20/04/2023b : SSID and WIFI password exchange 
+27/04/2023a : Wifi connects from exchanged SSID and Password 
+27/04/2023b : Queue recieve moved to read sensors more often Task_Database_Update_routine 
+              Wifi connection timeout : if ESP can't connect to wifi, it restart credidentials exchange via Bluetooth 
+03/05/2023a : Permanent storage implementation with preferences.h library 
+              Push button reading implementation 
+03/05/2023b : Repace sensor queues for global variables to facilitate access for multiple tasks 
+03/05/2023c : Database commands and threshold levels reading 
