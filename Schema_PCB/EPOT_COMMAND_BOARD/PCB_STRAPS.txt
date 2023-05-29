@@ -1,0 +1,10 @@
+Ce document décrit les modifications faites sur la PCB du module de commande
+Ces modifications ont été ajoutés au schéma, mais pas au fichier PCB.
+
+COUPER la liason entre [ESP32],pin 28 - [R15]
+RELIER [ESP32],pin 29 - [R15]
+
+COUPER la liason entre [ESP32],pin 27 - [R17]
+RELIER [ESP32],pin 23 - [R17]
+
+RELIER [ESP32],pin 9 - [RELAI 5v],bobine +
